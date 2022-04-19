@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Update student</title>
+    <link th:href="@{/css/bootstrap.css}" rel="stylesheet" />
+</head>
+<body>
+<div class="container">
+    <h1>Update a Studnet</h1>
+    <form th:action="@{/students/update/{id} (id=${student.getId()})}" method="POST" th:object="${student}">
+        <div class="form-group">
+            <label>First name</label>
+            <input
+                    type="text"
+                    name="firstName"
+                    th:field="*{firstName}"
+                    class="form-control"
+            />
+        </div>
+        <div class="form-group">
+            <label>Last name</label>
+            <input
+                    type="text"
+                    name="lastName"
+                    th:field="*{lastName}"
+                    class="form-control"
+            />
+        </div>
+        <div class="form-group">
+            <label>Email</label>
+            <input
+                    type="text"
+                    name="email"
+                    th:field="*{email}"
+                    class="form-control"
+            />
+        </div>
+        <div class="box-footer">
+            <button type="submit" class="btn btn-primary">Submit</button>
+        </div>
+    </form>
+</div>
+
+<!--    <form action="/add-student" method="post" th:object="${student}">-->
+<!--        <div class="container">-->
+
+<!--            <h2 class="text-center m-5">Enter student info</h2>-->
+
+<!--            <div class="input-group my-3">-->
+<!--                <div class="input-group-prepend">-->
+<!--                    <span class="input-group-text">First name</span>-->
+<!--                </div>-->
+<!--                <input type="text" class="form-control" th:field="*{first_name}">-->
+<!--            </div>-->
+<!--            <div class="input-group my-3">-->
+<!--                <div class="input-group-prepend">-->
+<!--                    <span class="input-group-text">Last name</span>-->
+<!--                </div>-->
+<!--                <input type="text" class="form-control" th:field="*{last_name}">-->
+<!--            </div>-->
+<!--            <div class="input-group my-3">-->
+<!--                <div class="input-group-prepend">-->
+<!--                    <span class="input-group-text">Email</span>-->
+<!--                </div>-->
+<!--                <input type="text" class="form-control" th:field="*{email}">-->
+<!--            </div>-->
+
+<!--        </div>-->
+<!--    </form>-->
+
+</body>
+</html>
